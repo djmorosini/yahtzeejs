@@ -1,6 +1,7 @@
 let turnNumber = 0;
 let rollNumber = 0;
 
+
 function rollAll() {
   if (rollNumber < 3) {
     let dice = document.getElementsByClassName('die');
