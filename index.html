@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Yahtzee</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <h1 id='title'>Scorecard</h1>
+  <hr>
+  <div id='scorecard'>
+    <div id='top-score'></div>
+    <div onclick='scoreOnes()' class='score-div'>Ones: <span id='ones' class='score-span top-scores'></span></div>
+    <div onclick='scoreTwos()' class='score-div'>Twos: <span id='twos' class='score-span top-scores'></span></div>
+    <div onclick='scoreThrees()' class='score-div'>Threes: <span id='threes' class='score-span top-scores'></span></div>
+    <div onclick='scoreFours()' class='score-div'>Fours: <span id='fours' class='score-span top-scores'></span></div>
+    <div onclick='scoreFives()' class='score-div'>Fives: <span id='fives' class='score-span top-scores'></span></div>
+    <div onclick='scoreSixes()' class='score-div'>Sixes: <span id='sixes' class='score-span top-scores'></span></div>
+  </div>
+  <hr>
+  <div id='bottom-score'>
+    <div onclick='scoreThreeKind()' class='score-div'>Three of a Kind: <span id='three-kind' class='score-span'></span></div>
+    <div onclick='scoreFourKind()' class='score-div'>Four of a Kind: <span id='four-kind' class='score-span'></span></div>
+    <div onclick='scoreFullHouse()' class='score-div'>Full House: <span id='full-house' class='score-span'></span></div>
+    <div onclick='scoreSmallStraight()' class='score-div'>Small Straight: <span id='small-straight' class='score-span'></span></div>
+    <div onclick='scoreLargeStraight()' class='score-div'>Large Straight: <span id='large-straight' class='score-span'></span></div>
+    <div onclick='scoreYahtzee()' class='score-div'>Yahtzee: <span id='yahtzee' class='score-span'></span></div>
+    <div onclick='scoreChance()' class='score-div'>Chance: <span id='chance' class='score-span'></span></div>
+    <div onclick='scoreBonus()' class='score-div'>Bonus: <span id='bonus' class='score-span'></span></div>
+  </div>
+  <hr>
+  <div id='dice'>
+    <button onclick='lockDie("die1")' id='die1' class='die'>0</button>
+    <button onclick='lockDie("die2")' id='die2' class='die'>0</button>
+    <button onclick='lockDie("die3")' id='die3' class='die'>0</button>
+    <button onclick='lockDie("die4")' id='die4' class='die'>0</button>
+    <button onclick='lockDie("die5")' id='die5' class='die'>0</button>
+    <button onclick='rollAll()' id='roll-btn'>Roll Dice</button>
+  </div>
+  <div>Roll: <span id='rollDiv'>0</span><span id='total'>Total: </span></div><button onclick='reset()' id='reset-btn'>Reset</button>
+</body>
+
+</html>

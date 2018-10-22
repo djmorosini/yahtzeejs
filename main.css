@@ -1,0 +1,31 @@
+#dice {
+  display: flex;
+}
+#scorecard {
+  display: flex;
+  flex-direction: column;
+}
+.die {
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid black;
+}
+#roll-btn {
+  width: 100px;
+}
+.die.active {
+  background-color: lightblue;
+  border: 1px solid yellow;
+}
+.score-div {
+  padding: 5px;
+  margin-bottom: 2px;
+  width: 500px;
+  border: 1px solid black;
+}
+#title {
+  font-size: 18px;
+}
+#total {
+  margin-left: 50px;
+}
