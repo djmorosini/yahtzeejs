@@ -1,7 +1,6 @@
 let turnNumber = 0;
 let rollNumber = 0;
 
-
 function rollAll() {
   if (rollNumber < 3) {
     let dice = document.getElementsByClassName('die');
@@ -11,9 +10,9 @@ function rollAll() {
         updateDice(die.id, roll)
       }
     }
-    let rollDiv = document.getElementById('rollDiv')
+    let rollSpan = document.getElementById('rollSpan')
     rollNumber++
-    rollDiv.textContent = rollNumber
+    rollSpan.textContent = rollNumber
   }
 }
 function updateDice(id, roll) {
@@ -36,8 +35,8 @@ function resetRollNumber() {
   rollNumber = 0
   turnNumber++
   console.log(turnNumber)
-  let rollDiv = document.getElementById('rollDiv')
-  rollDiv.textContent = rollNumber
+  let rollSpan = document.getElementById('rollSpan')
+  rollSpan.textContent = rollNumber
   let dice = document.getElementsByClassName('die');
   for (let die of dice) {
     die.textContent = '0'
@@ -165,7 +164,6 @@ function scoreSixes() {
   }
 }
 
-// 
 
 function scoreThreeKind() {
   let threeKind = document.getElementById('three-kind')
@@ -205,8 +203,6 @@ function scoreThreeKind() {
     resetRollNumber()
   }
 }
-
-
 function scoreFourKind() {
   let fourKind = document.getElementById('four-kind')
   if (fourKind.textContent === '') {
@@ -240,8 +236,6 @@ function scoreFourKind() {
     resetRollNumber()
   }
 }
-
-
 function scoreFullHouse() {
   let fullHouse = document.getElementById('full-house')
   if (fullHouse.textContent === '') {
@@ -274,8 +268,6 @@ function scoreFullHouse() {
     resetRollNumber()
   }
 }
-
-
 function scoreSmallStraight() {
   let smallStraight = document.getElementById('small-straight')
   if (smallStraight.textContent === '') {
@@ -324,8 +316,6 @@ function scoreSmallStraight() {
     resetRollNumber()
   }
 }
-
-
 function scoreLargeStraight() {
   const winningArrays = [
     [1, 2, 3, 4, 5],
@@ -382,8 +372,6 @@ function scoreChance() {
     resetRollNumber()
   }
 }
-
-
 function scoreBonus() {
   let bonusDiv = document.getElementById('bonus')
   let yahtzee = document.getElementById('yahtzee')
@@ -421,8 +409,8 @@ function reset() {
   }
   rollNumber = 0
   turnNumber = 0
-  let rollDiv = document.getElementById('rollDiv')
-  rollDiv.textContent = rollNumber
+  let rollSpan = document.getElementById('rollSpan')
+  rollSpan.textContent = rollNumber
   let totalDiv = document.getElementById('total')
   totalDiv.textContent = 'Total: '
   let rollBtn = document.getElementById('roll-btn')

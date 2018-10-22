@@ -3,7 +3,9 @@
 }
 #scorecard {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-flow: row wrap;
+  width: 425px;
 }
 .die {
   padding: 10px;
@@ -20,7 +22,13 @@
 .score-div {
   padding: 5px;
   margin-bottom: 2px;
-  width: 500px;
+  width: 200px;
+  border: 1px solid black;
+}
+.score-span {
+  padding: 5px;
+  margin-bottom: 2px;
+  width: 200px;
   border: 1px solid black;
 }
 #title {
@@ -28,4 +36,16 @@
 }
 #total {
   margin-left: 50px;
+}
+#bottom-score {
+  display: flex;
+  flex-direction: row;
+  flex-flow: row wrap;
+  width: 425px;
+}
+#reset-btn {
+  margin-top: 5px;
+}
+#roll-div {
+  margin-top: 5px;
 }

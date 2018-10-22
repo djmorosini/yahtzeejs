@@ -14,24 +14,24 @@
   <h1 id='title'>Scorecard</h1>
   <hr>
   <div id='scorecard'>
+    <div onclick='scoreOnes()' class='score-div'>Ones: </div><span onclick='scoreOnes()' id='ones' class='score-span top-scores'></span>
+    <div onclick='scoreTwos()' class='score-div'>Twos: </div><span onclick='scoreTwos()' id='twos' class='score-span top-scores'></span>
+    <div onclick='scoreThrees()' class='score-div'>Threes: </div><span onclick='scoreThrees()' id='threes' class='score-span top-scores'></span>
+    <div onclick='scoreFours()' class='score-div'>Fours: </div><span onclick='scoreFours()' id='fours' class='score-span top-scores'></span>
+    <div onclick='scoreFives()' class='score-div'>Fives: </div><span onclick='scoreFives()' id='fives' class='score-span top-scores'></span>
+    <div onclick='scoreSixes()' class='score-div'>Sixes: </div><span onclick='scoreSixes()' id='sixes' class='score-span top-scores'></span>
     <div id='top-score'></div>
-    <div onclick='scoreOnes()' class='score-div'>Ones: <span id='ones' class='score-span top-scores'></span></div>
-    <div onclick='scoreTwos()' class='score-div'>Twos: <span id='twos' class='score-span top-scores'></span></div>
-    <div onclick='scoreThrees()' class='score-div'>Threes: <span id='threes' class='score-span top-scores'></span></div>
-    <div onclick='scoreFours()' class='score-div'>Fours: <span id='fours' class='score-span top-scores'></span></div>
-    <div onclick='scoreFives()' class='score-div'>Fives: <span id='fives' class='score-span top-scores'></span></div>
-    <div onclick='scoreSixes()' class='score-div'>Sixes: <span id='sixes' class='score-span top-scores'></span></div>
   </div>
   <hr>
   <div id='bottom-score'>
-    <div onclick='scoreThreeKind()' class='score-div'>Three of a Kind: <span id='three-kind' class='score-span'></span></div>
-    <div onclick='scoreFourKind()' class='score-div'>Four of a Kind: <span id='four-kind' class='score-span'></span></div>
-    <div onclick='scoreFullHouse()' class='score-div'>Full House: <span id='full-house' class='score-span'></span></div>
-    <div onclick='scoreSmallStraight()' class='score-div'>Small Straight: <span id='small-straight' class='score-span'></span></div>
-    <div onclick='scoreLargeStraight()' class='score-div'>Large Straight: <span id='large-straight' class='score-span'></span></div>
-    <div onclick='scoreYahtzee()' class='score-div'>Yahtzee: <span id='yahtzee' class='score-span'></span></div>
-    <div onclick='scoreChance()' class='score-div'>Chance: <span id='chance' class='score-span'></span></div>
-    <div onclick='scoreBonus()' class='score-div'>Bonus: <span id='bonus' class='score-span'></span></div>
+    <div onclick='scoreThreeKind()' class='score-div'>Three of a Kind: </div><span id='three-kind' class='score-span'></span>
+    <div onclick='scoreFourKind()' class='score-div'>Four of a Kind: </div><span id='four-kind' class='score-span'></span>
+    <div onclick='scoreFullHouse()' class='score-div'>Full House: </div><span id='full-house' class='score-span'></span>
+    <div onclick='scoreSmallStraight()' class='score-div'>Small Straight: </div><span id='small-straight' class='score-span'></span>
+    <div onclick='scoreLargeStraight()' class='score-div'>Large Straight: </div><span id='large-straight' class='score-span'></span>
+    <div onclick='scoreYahtzee()' class='score-div'>Yahtzee: </div><span id='yahtzee' class='score-span'></span>
+    <div onclick='scoreChance()' class='score-div'>Chance: </div><span id='chance' class='score-span'></span>
+    <div onclick='scoreBonus()' class='score-div'>Bonus: </div><span id='bonus' class='score-span'></span>
   </div>
   <hr>
   <div id='dice'>
@@ -42,7 +42,7 @@
     <button onclick='lockDie("die5")' id='die5' class='die'>0</button>
     <button onclick='rollAll()' id='roll-btn'>Roll Dice</button>
   </div>
-  <div>Roll: <span id='rollDiv'>0</span><span id='total'>Total: </span></div><button onclick='reset()' id='reset-btn'>Reset</button>
+  <div id='roll-div'>Roll: <span id='rollSpan'>0</span><span id='total'>Total: </span></div><button onclick='reset()' id='reset-btn'>Reset</button>
 </body>
 
 </html>
