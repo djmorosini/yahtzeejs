@@ -73,97 +73,21 @@ function resetRollNumber() {
   }
 }
 
-function scoreOnes() {
-  let onesDiv = document.getElementById('ones');
-  if (onesDiv.textContent === '') {
+function scoreTop(divID, number) {
+  let div = document.getElementById(divID);
+  if (div.textContent === '') {
     let dice = document.getElementsByClassName('die');
     let scoreArray = [];
     for (let die of dice) {
-      if (die.textContent == '1') {
+      if (die.textContent == number) {
         scoreArray.push(die.textContent)
       }
     }
     let sum = scoreArray.reduce((a, b) => parseInt(a) + parseInt(b), 0);
-    onesDiv.textContent = sum
+    div.textContent = sum
     resetRollNumber()
   }
 }
-function scoreTwos() {
-  let twosDiv = document.getElementById('twos');
-  if (twosDiv.textContent === '') {
-    let dice = document.getElementsByClassName('die');
-    let scoreArray = [];
-    for (let die of dice) {
-      if (die.textContent == '2') {
-        scoreArray.push(die.textContent)
-      }
-    }
-    let sum = scoreArray.reduce((a, b) => parseInt(a) + parseInt(b), 0);
-    twosDiv.textContent = sum
-    resetRollNumber()
-  }
-}
-function scoreThrees() {
-  let threesDiv = document.getElementById('threes');
-  if (threesDiv.textContent === '') {
-    let dice = document.getElementsByClassName('die');
-    let scoreArray = [];
-    for (let die of dice) {
-      if (die.textContent == '3') {
-        scoreArray.push(die.textContent)
-      }
-    }
-    let sum = scoreArray.reduce((a, b) => parseInt(a) + parseInt(b), 0);
-    threesDiv.textContent = sum
-    resetRollNumber()
-  }
-}
-function scoreFours() {
-  let foursDiv = document.getElementById('fours');
-  if (foursDiv.textContent === '') {
-    let dice = document.getElementsByClassName('die');
-    let scoreArray = [];
-    for (let die of dice) {
-      if (die.textContent == '4') {
-        scoreArray.push(die.textContent)
-      }
-    }
-    let sum = scoreArray.reduce((a, b) => parseInt(a) + parseInt(b), 0);
-    foursDiv.textContent = sum
-    resetRollNumber()
-  }
-}
-function scoreFives() {
-  let fivesDiv = document.getElementById('fives');
-  if (fivesDiv.textContent === '') {
-    let dice = document.getElementsByClassName('die');
-    let scoreArray = [];
-    for (let die of dice) {
-      if (die.textContent == '5') {
-        scoreArray.push(die.textContent)
-      }
-    }
-    let sum = scoreArray.reduce((a, b) => parseInt(a) + parseInt(b), 0);
-    fivesDiv.textContent = sum
-    resetRollNumber()
-  }
-}
-function scoreSixes() {
-  let sixesDiv = document.getElementById('sixes');
-  if (sixesDiv.textContent === '') {
-    let dice = document.getElementsByClassName('die');
-    let scoreArray = [];
-    for (let die of dice) {
-      if (die.textContent == '6') {
-        scoreArray.push(die.textContent)
-      }
-    }
-    let sum = scoreArray.reduce((a, b) => parseInt(a) + parseInt(b), 0);
-    sixesDiv.textContent = sum
-    resetRollNumber()
-  }
-}
-
 
 function scoreThreeKind() {
   let threeKind = document.getElementById('three-kind')
