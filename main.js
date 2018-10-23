@@ -43,6 +43,21 @@ function resetRollNumber() {
     die.style = 'border: 1px solid black;'
     die.className = 'die'
   }
+  let upperSectionScore = document.getElementsByClassName('top-scores')
+  let totalTopSection = document.getElementById('upper-section')
+  let upperArray = []
+  for (let scores of upperSectionScore) {
+    if (scores.textContent !== '') {
+      upperArray.push(scores.textContent)
+    }
+  }
+  if (upperArray.length === 6 && totalTopSection.textContent === '') {
+    let upperSum = upperArray.reduce((a, b) => parseInt(a) + parseInt(b), 0);
+    totalTopSection.textContent = upperSum
+    if (upperSum >= 63) {
+      totalTopSection.textContent += ' + 35 = ' + (upperSum + 35)
+    }
+  }
   if (turnNumber === 13) {
     // game over
     let scoreSpans = document.getElementsByClassName('score-span');
@@ -69,7 +84,7 @@ function resetRollNumber() {
     let rollBtn = document.getElementById('roll-btn')
     rollBtn.disabled = true
     let totalDiv = document.getElementById('total')
-    totalDiv.textContent = 'Total: ' + totalSum
+    totalDiv.textContent = totalSum
   }
 }
 
@@ -336,7 +351,9 @@ function reset() {
   let rollSpan = document.getElementById('rollSpan')
   rollSpan.textContent = rollNumber
   let totalDiv = document.getElementById('total')
-  totalDiv.textContent = 'Total: '
+  totalDiv.textContent = ''
+  let upperDiv = document.getElementById('upper-section')
+  upperDiv.textContent = ''
   let rollBtn = document.getElementById('roll-btn')
   rollBtn.disabled = false
 }
