@@ -20,14 +20,14 @@
 }
 .score-div {
   padding: 5px;
-  width: 200px;
+  width: 150px;
   border: 1px solid black;
   border-left: none;
 }
 .score-span {
   padding: 5px;
   margin-right: 0;
-  width: 200px;
+  width: 100px;
   border: 1px solid black;
   border-right: none;
 }
@@ -55,10 +55,12 @@
 }
 #card {
   border: 2px solid black;
-  width: 422px;
+  width: 272px;
 }
 .totals {
-  margin: 4px;
+  padding: 4px;
+  width: 100%;
+  border-top: 2px solid black;
 }
 #controls {
   margin-top: 10px;
