@@ -7,6 +7,7 @@
   <title>Yahtzee!</title>
   <link rel="icon" type="image/png" href="yahtzeeDice.png">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:900i|Changa+One:400i|Exo:900i|Raleway:900i" rel="stylesheet">
   <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
   <script src="main.js"></script>
 </head>
@@ -14,7 +15,7 @@
 <body>
   <div id='card'>
     <h1 id='title'>Yahtzee! Scorecard</h1>
-    <div id='scorecard'>
+    <div id='top-section'>
       <div onclick='scoreTop("ones", "1")' class='score-div'>Aces: </div><span onclick='scoreTop("ones", "1")' id='ones'
         class='score-span top-scores'></span>
       <div onclick='scoreTop("twos", "2")' class='score-div'>Twos: </div><span onclick='scoreTop("twos", "2")' id='twos'
