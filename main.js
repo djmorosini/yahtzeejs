@@ -18,7 +18,7 @@ function rollAll() {
 function updateDice(id, roll) {
   let dieDiv = document.getElementById(id);
   if (roll == 1) {
-    dieDiv.innerHTML = '<img style="width: 34px; z-index: 2;" id="1" src="images/dieFace1.png"/>';
+    dieDiv.innerHTML = '<img style="width: 34px; z-index: 2;" id="1" src="images/diefaces (1).png"/>';
   } else if (roll == 2) {
     dieDiv.innerHTML = '<img style="width: 34px; z-index: 2;" id="2" src="images/diefaces (2).png"/>';
   } else if (roll == 3) {
