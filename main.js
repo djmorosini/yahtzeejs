@@ -17,16 +17,29 @@ function rollAll() {
 }
 function updateDice(id, roll) {
   let dieDiv = document.getElementById(id);
-  dieDiv.textContent = roll;
+  if (roll == 1) {
+    dieDiv.innerHTML = '<img style="width: 34px; z-index: 2;" src="images/dieFace1.png"/>';
+  } else if (roll == 2) {
+    dieDiv.innerHTML = '<img style="width: 34px; z-index: 2;" src="images/diefaces (2).png"/>';
+  } else if (roll == 3) {
+    dieDiv.innerHTML = '<img style="width: 34px; z-index: 2;" src="images/diefaces (3).png"/>';
+  } else if (roll == 4) {
+    dieDiv.innerHTML = '<img style="width: 34px; z-index: 2;" src="images/diefaces (4).png"/>';
+  } else if (roll == 5) {
+    dieDiv.innerHTML = '<img style="width: 34px; z-index: 2;" src="images/diefaces (5).png"/>';
+  } else if (roll == 6) {
+    dieDiv.innerHTML = '<img style="width: 34px; z-index: 2;" src="images/diefaces (6).png"/>';
+  }
+  dieDiv.style = 'background-image: url()';
 }
 function lockDie(id) {
   let die = document.getElementById(id);
-  if (die.textContent !== '0') {
+  if (die.innerHTML !== '') {
     if (die.className === 'die active') {
       die.style = 'border: 1px solid black;'
       die.className = 'die'
     } else {
-      die.style = 'border: 1px solid yellow;'
+      die.style = 'border: 2px solid rgb(0, 0, 209);'
       die.className += ' active'
     }
   }
@@ -39,7 +52,7 @@ function resetRollNumber() {
   rollSpan.textContent = rollNumber
   let dice = document.getElementsByClassName('die');
   for (let die of dice) {
-    die.textContent = '0'
+    die.textContent = ''
     die.style = 'border: 1px solid black;'
     die.className = 'die'
   }
@@ -338,7 +351,7 @@ function scoreBonus() {
 function reset() {
   let dice = document.getElementsByClassName('die');
   for (let die of dice) {
-    die.textContent = '0'
+    die.textContent = ''
     die.style = 'border: 1px solid black;'
     die.className = 'die'
   }

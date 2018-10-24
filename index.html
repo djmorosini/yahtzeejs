@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Yahtzee!</title>
-  <link rel="icon" type="image/png" href="yahtzeeDice.png">
+  <link rel="icon" type="image/png" href="images/yahtzeeDice.png">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:900i|Changa+One:400i|Exo:900i|Raleway:900i" rel="stylesheet">
   <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
@@ -48,15 +48,16 @@
     </div>
   </div>
   <div id='controls'>
+    <div id='roll-wrap'>Roll: <span id='rollSpan'>0</span></div>
     <div id='dice'>
-      <button onclick='lockDie("die1")' id='die1' class='die'>0</button>
-      <button onclick='lockDie("die2")' id='die2' class='die'>0</button>
-      <button onclick='lockDie("die3")' id='die3' class='die'>0</button>
-      <button onclick='lockDie("die4")' id='die4' class='die'>0</button>
-      <button onclick='lockDie("die5")' id='die5' class='die'>0</button>
+      <button onclick='lockDie("die1")' id='die1' class='die'></button>
+      <button onclick='lockDie("die2")' id='die2' class='die'></button>
+      <button onclick='lockDie("die3")' id='die3' class='die'></button>
+      <button onclick='lockDie("die4")' id='die4' class='die'></button>
+      <button onclick='lockDie("die5")' id='die5' class='die'></button>
       <button onclick='rollAll()' id='roll-btn'>Roll Dice</button>
     </div>
-    <div id='roll-total-wrap'>Roll: <span id='rollSpan'>0</span><button onclick='reset()' id='reset-btn'>New Game</button></div>
+    <button onclick='reset()' id='reset-btn'>New Game</button>
   </div>
 </body>
 
