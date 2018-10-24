@@ -18,19 +18,18 @@ function rollAll() {
 function updateDice(id, roll) {
   let dieDiv = document.getElementById(id);
   if (roll == 1) {
-    dieDiv.innerHTML = '<img style="width: 34px; z-index: 2;" src="images/dieFace1.png"/>';
+    dieDiv.innerHTML = '<img style="width: 34px; z-index: 2;" id="1" src="images/dieFace1.png"/>';
   } else if (roll == 2) {
-    dieDiv.innerHTML = '<img style="width: 34px; z-index: 2;" src="images/diefaces (2).png"/>';
+    dieDiv.innerHTML = '<img style="width: 34px; z-index: 2;" id="2" src="images/diefaces (2).png"/>';
   } else if (roll == 3) {
-    dieDiv.innerHTML = '<img style="width: 34px; z-index: 2;" src="images/diefaces (3).png"/>';
+    dieDiv.innerHTML = '<img style="width: 34px; z-index: 2;" id="3" src="images/diefaces (3).png"/>';
   } else if (roll == 4) {
-    dieDiv.innerHTML = '<img style="width: 34px; z-index: 2;" src="images/diefaces (4).png"/>';
+    dieDiv.innerHTML = '<img style="width: 34px; z-index: 2;" id="4" src="images/diefaces (4).png"/>';
   } else if (roll == 5) {
-    dieDiv.innerHTML = '<img style="width: 34px; z-index: 2;" src="images/diefaces (5).png"/>';
+    dieDiv.innerHTML = '<img style="width: 34px; z-index: 2;" id="5" src="images/diefaces (5).png"/>';
   } else if (roll == 6) {
-    dieDiv.innerHTML = '<img style="width: 34px; z-index: 2;" src="images/diefaces (6).png"/>';
+    dieDiv.innerHTML = '<img style="width: 34px; z-index: 2;" id="6" src="images/diefaces (6).png"/>';
   }
-  dieDiv.style = 'background-image: url()';
 }
 function lockDie(id) {
   let die = document.getElementById(id);
@@ -52,8 +51,8 @@ function resetRollNumber() {
   rollSpan.textContent = rollNumber
   let dice = document.getElementsByClassName('die');
   for (let die of dice) {
-    die.textContent = ''
-    die.style = 'border: 1px solid black;'
+    die.innerHTML = ''
+    die.style = 'border: 2px solid black;'
     die.className = 'die'
   }
   let upperSectionScore = document.getElementsByClassName('top-scores')
@@ -107,8 +106,9 @@ function scoreTop(divID, number) {
     let dice = document.getElementsByClassName('die');
     let scoreArray = [];
     for (let die of dice) {
-      if (die.textContent == number) {
-        scoreArray.push(die.textContent)
+      let child = (die.firstElementChild || die.firstChild)
+      if (child.id == number) {
+        scoreArray.push(child.id)
       }
     }
     let sum = scoreArray.reduce((a, b) => parseInt(a) + parseInt(b), 0);
@@ -123,7 +123,8 @@ function scoreThreeKind() {
     let dice = document.getElementsByClassName('die');
     let diceArray = [];
     for (let die of dice) {
-      diceArray.push(die.textContent)
+      let child = (die.firstElementChild || die.firstChild)
+      diceArray.push(child.id)
     }
     let sortedArray = diceArray.sort((a, b) => parseInt(a) - parseInt(b))
 
@@ -161,7 +162,8 @@ function scoreFourKind() {
     let dice = document.getElementsByClassName('die');
     let diceArray = [];
     for (let die of dice) {
-      diceArray.push(die.textContent)
+      let child = (die.firstElementChild || die.firstChild)
+      diceArray.push(child.id)
     }
     let sortedArray = diceArray.sort((a, b) => parseInt(a) - parseInt(b))
 
@@ -194,7 +196,8 @@ function scoreFullHouse() {
     let dice = document.getElementsByClassName('die');
     let diceArray = [];
     for (let die of dice) {
-      diceArray.push(die.textContent)
+      let child = (die.firstElementChild || die.firstChild)
+      diceArray.push(child.id)
     }
     let sortedArray = diceArray.sort((a, b) => parseInt(a) - parseInt(b))
 
@@ -227,7 +230,8 @@ function scoreSmallStraight() {
     let dice = document.getElementsByClassName('die');
     let diceArray = [];
     for (let die of dice) {
-      diceArray.push(die.textContent)
+      let child = (die.firstElementChild || die.firstChild)
+      diceArray.push(child.id)
     }
     let sortedArray = diceArray.sort((a, b) => parseInt(a) - parseInt(b))
     let uniqueItems = [...new Set(sortedArray)]
@@ -245,7 +249,6 @@ function scoreSmallStraight() {
         lastFour == '2345' ||
         lastFour == '3456'
       ) {
-        console.log('score small straight')
         smallStraight.textContent = '30'
       } else {
         smallStraight.textContent = '0'
@@ -278,7 +281,8 @@ function scoreLargeStraight() {
     let dice = document.getElementsByClassName('die');
     let diceArray = [];
     for (let die of dice) {
-      diceArray.push(die.textContent)
+      let child = (die.firstElementChild || die.firstChild)
+      diceArray.push(child.id)
     }
     let sortedArray = diceArray.sort((a, b) => parseInt(a) - parseInt(b))
     if (winningArrays[0].join('') === sortedArray.join('') || winningArrays[1].join('') === sortedArray.join('')) {
@@ -295,7 +299,8 @@ function scoreYahtzee() {
     let dice = document.getElementsByClassName('die');
     let diceArray = [];
     for (let die of dice) {
-      diceArray.push(die.textContent)
+      let child = (die.firstElementChild || die.firstChild)
+      diceArray.push(child.id)
     }
     let scoreArray = [];
     for (let i = 1; i < (diceArray.length + 1); i++) {
@@ -317,7 +322,8 @@ function scoreChance() {
     let dice = document.getElementsByClassName('die');
     let diceArray = [];
     for (let die of dice) {
-      diceArray.push(die.textContent)
+      let child = (die.firstElementChild || die.firstChild)
+      diceArray.push(child.id)
     }
     let sum = diceArray.reduce((a, b) => parseInt(a) + parseInt(b), 0);
     chanceDiv.textContent = sum;
@@ -331,7 +337,8 @@ function scoreBonus() {
     let dice = document.getElementsByClassName('die');
     let diceArray = [];
     for (let die of dice) {
-      diceArray.push(die.textContent)
+      let child = (die.firstElementChild || die.firstChild)
+      diceArray.push(child.id)
     }
     let scoreArray = [];
     for (let i = 1; i < (diceArray.length + 1); i++) {
@@ -352,7 +359,7 @@ function reset() {
   let dice = document.getElementsByClassName('die');
   for (let die of dice) {
     die.textContent = ''
-    die.style = 'border: 1px solid black;'
+    die.style = 'border: 2px solid black;'
     die.className = 'die'
   }
   let scoreSpans = document.getElementsByClassName('score-span');
