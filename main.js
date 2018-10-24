@@ -44,9 +44,9 @@ function lockDie(id) {
   }
 }
 function resetRollNumber() {
-  rollNumber = 0
+  rollNumber = 0;
   turnNumber++
-  console.log(turnNumber)
+
   let rollSpan = document.getElementById('rollSpan')
   rollSpan.textContent = rollNumber
   let dice = document.getElementsByClassName('die');
@@ -102,16 +102,9 @@ function resetRollNumber() {
 
 function scoreTop(divID, number) {
   let div = document.getElementById(divID);
-  if (div.textContent === '') {
-    let dice = document.getElementsByClassName('die');
-    let scoreArray = [];
-    for (let die of dice) {
-      let child = (die.firstElementChild || die.firstChild)
-      if (child.id == number) {
-        scoreArray.push(child.id)
-      }
-    }
-    let sum = scoreArray.reduce((a, b) => parseInt(a) + parseInt(b), 0);
+  if (div.textContent === '' && rollNumber > 0) {
+    let sortedDiceArray = sortDiceArray(number)
+    let sum = sortedDiceArray.reduce((a, b) => parseInt(a) + parseInt(b), 0);
     div.textContent = sum
     resetRollNumber()
   }
@@ -119,24 +112,18 @@ function scoreTop(divID, number) {
 
 function scoreThreeKind() {
   let threeKind = document.getElementById('three-kind')
-  if (threeKind.textContent === '') {
-    let dice = document.getElementsByClassName('die');
-    let diceArray = [];
-    for (let die of dice) {
-      let child = (die.firstElementChild || die.firstChild)
-      diceArray.push(child.id)
-    }
-    let sortedArray = diceArray.sort((a, b) => parseInt(a) - parseInt(b))
+  if (threeKind.textContent === '' && rollNumber > 0) {
+    let sortedDiceArray = sortDiceArray('none')
 
-    let first = sortedArray[0]
-    let middle = sortedArray[2]
-    let last = sortedArray[4]
+    let first = sortedDiceArray[0]
+    let middle = sortedDiceArray[2]
+    let last = sortedDiceArray[4]
 
     let firstArray = []
     let middleArray = []
     let lastArray = []
 
-    for (let number of sortedArray) {
+    for (let number of sortedDiceArray) {
       if (number === first) {
         firstArray.push(number)
       }
@@ -147,8 +134,8 @@ function scoreThreeKind() {
         lastArray.push(number)
       }
     }
-    if (firstArray.length === 3 || middleArray.length === 3 || lastArray.length === 3) {
-      let sum = diceArray.reduce((a, b) => parseInt(a) + parseInt(b), 0);
+    if (firstArray.length >= 3 || middleArray.length >= 3 || lastArray.length >= 3) {
+      let sum = sortedDiceArray.reduce((a, b) => parseInt(a) + parseInt(b), 0);
       threeKind.textContent = sum
     } else {
       threeKind.textContent = '0'
@@ -158,22 +145,16 @@ function scoreThreeKind() {
 }
 function scoreFourKind() {
   let fourKind = document.getElementById('four-kind')
-  if (fourKind.textContent === '') {
-    let dice = document.getElementsByClassName('die');
-    let diceArray = [];
-    for (let die of dice) {
-      let child = (die.firstElementChild || die.firstChild)
-      diceArray.push(child.id)
-    }
-    let sortedArray = diceArray.sort((a, b) => parseInt(a) - parseInt(b))
+  if (fourKind.textContent === '' && rollNumber > 0) {
+    let sortedDiceArray = sortDiceArray('none')
 
-    let first = sortedArray[0]
-    let last = sortedArray[4]
+    let first = sortedDiceArray[0]
+    let last = sortedDiceArray[4]
 
     let firstArray = []
     let lastArray = []
 
-    for (let number of sortedArray) {
+    for (let number of sortedDiceArray) {
       if (number === first) {
         firstArray.push(number)
       }
@@ -182,7 +163,7 @@ function scoreFourKind() {
       }
     }
     if (firstArray.length >= 4 || lastArray.length >= 4) {
-      let sum = diceArray.reduce((a, b) => parseInt(a) + parseInt(b), 0);
+      let sum = sortedDiceArray.reduce((a, b) => parseInt(a) + parseInt(b), 0);
       fourKind.textContent = sum
     } else {
       fourKind.textContent = '0'
@@ -192,22 +173,16 @@ function scoreFourKind() {
 }
 function scoreFullHouse() {
   let fullHouse = document.getElementById('full-house')
-  if (fullHouse.textContent === '') {
-    let dice = document.getElementsByClassName('die');
-    let diceArray = [];
-    for (let die of dice) {
-      let child = (die.firstElementChild || die.firstChild)
-      diceArray.push(child.id)
-    }
-    let sortedArray = diceArray.sort((a, b) => parseInt(a) - parseInt(b))
+  if (fullHouse.textContent === '' && rollNumber > 0) {
+    let sortedDiceArray = sortDiceArray('none')
 
-    let first = sortedArray[0]
-    let last = sortedArray[4]
+    let first = sortedDiceArray[0]
+    let last = sortedDiceArray[4]
 
     let firstArray = []
     let lastArray = []
 
-    for (let number of sortedArray) {
+    for (let number of sortedDiceArray) {
       if (number === first) {
         firstArray.push(number)
       }
@@ -225,19 +200,13 @@ function scoreFullHouse() {
 }
 function scoreSmallStraight() {
   let smallStraight = document.getElementById('small-straight')
-  if (smallStraight.textContent === '') {
+  if (smallStraight.textContent === '' && rollNumber > 0) {
+    let sortedDiceArray = sortDiceArray('none')
+    let uniqueItems = [...new Set(sortedDiceArray)]
 
-    let dice = document.getElementsByClassName('die');
-    let diceArray = [];
-    for (let die of dice) {
-      let child = (die.firstElementChild || die.firstChild)
-      diceArray.push(child.id)
-    }
-    let sortedArray = diceArray.sort((a, b) => parseInt(a) - parseInt(b))
-    let uniqueItems = [...new Set(sortedArray)]
     if (uniqueItems.length === 5) {
-      let firstFour = sortedArray.slice(0, 4).join('')
-      let lastFour = sortedArray.slice(1, 5).join('')
+      let firstFour = sortedDiceArray.slice(0, 4).join('')
+      let lastFour = sortedDiceArray.slice(1, 5).join('')
 
       let smallStraight = document.getElementById('small-straight')
 
@@ -277,15 +246,9 @@ function scoreLargeStraight() {
     [2, 3, 4, 5, 6]
   ]
   let largeStraight = document.getElementById('large-straight')
-  if (largeStraight.textContent === '') {
-    let dice = document.getElementsByClassName('die');
-    let diceArray = [];
-    for (let die of dice) {
-      let child = (die.firstElementChild || die.firstChild)
-      diceArray.push(child.id)
-    }
-    let sortedArray = diceArray.sort((a, b) => parseInt(a) - parseInt(b))
-    if (winningArrays[0].join('') === sortedArray.join('') || winningArrays[1].join('') === sortedArray.join('')) {
+  if (largeStraight.textContent === '' && rollNumber > 0) {
+    let sortedDiceArray = sortDiceArray('none')
+    if (winningArrays[0].join('') === sortedDiceArray.join('') || winningArrays[1].join('') === sortedDiceArray.join('')) {
       largeStraight.textContent = '40'
     } else {
       largeStraight.textContent = '0'
@@ -295,20 +258,10 @@ function scoreLargeStraight() {
 }
 function scoreYahtzee() {
   let yahtzee = document.getElementById('yahtzee')
-  if (yahtzee.textContent === '') {
-    let dice = document.getElementsByClassName('die');
-    let diceArray = [];
-    for (let die of dice) {
-      let child = (die.firstElementChild || die.firstChild)
-      diceArray.push(child.id)
-    }
-    let scoreArray = [];
-    for (let i = 1; i < (diceArray.length + 1); i++) {
-      if (diceArray[0] === diceArray[i]) {
-        scoreArray.push(diceArray[i])
-      }
-    }
-    if (scoreArray.length === 4 && scoreArray[0] !== '0') {
+  if (yahtzee.textContent === '' && rollNumber > 0) {
+    let sortedDiceArray = sortDiceArray('none')
+    let uniqueItems = [...new Set(sortedDiceArray)]
+    if (uniqueItems.length === 5 && uniqueItems[0] !== '0') {
       yahtzee.textContent = '50'
     } else {
       yahtzee.textContent = '0'
@@ -318,14 +271,9 @@ function scoreYahtzee() {
 }
 function scoreChance() {
   let chanceDiv = document.getElementById('chance')
-  if (chanceDiv.textContent === '') {
-    let dice = document.getElementsByClassName('die');
-    let diceArray = [];
-    for (let die of dice) {
-      let child = (die.firstElementChild || die.firstChild)
-      diceArray.push(child.id)
-    }
-    let sum = diceArray.reduce((a, b) => parseInt(a) + parseInt(b), 0);
+  if (chanceDiv.textContent === '' && rollNumber > 0) {
+    let sortedDiceArray = sortDiceArray('none')
+    let sum = sortedDiceArray.reduce((a, b) => parseInt(a) + parseInt(b), 0);
     chanceDiv.textContent = sum;
     resetRollNumber()
   }
@@ -333,56 +281,26 @@ function scoreChance() {
 function scoreBonus() {
   let bonusDiv = document.getElementById('bonus')
   let yahtzee = document.getElementById('yahtzee')
-  if (bonusDiv.textContent === '' && yahtzee.textContent === '50') {
-    let dice = document.getElementsByClassName('die');
-    let diceArray = [];
-    for (let die of dice) {
-      let child = (die.firstElementChild || die.firstChild)
-      diceArray.push(child.id)
-    }
-    let scoreArray = [];
-    for (let i = 1; i < (diceArray.length + 1); i++) {
-      if (diceArray[0] === diceArray[i]) {
-        scoreArray.push(diceArray[i])
-      }
-    }
-    if (scoreArray.length === 4 && scoreArray[0] !== '') {
+  if (bonusDiv.textContent === '' && yahtzee.textContent === '50' && rollNumber > 0) {
+    let sortedDiceArray = sortDiceArray('none')
+    let uniqueItems = [...new Set(sortedDiceArray)]
+    if (uniqueItems.length === 5 && uniqueItems[0] !== '0') {
       bonusDiv.textContent = '100'
     } else {
       bonusDiv.textContent = '0'
     }
     resetRollNumber()
   } else if (bonusDiv.textContent === '100') {
-    let dice = document.getElementsByClassName('die');
-    let diceArray = [];
-    for (let die of dice) {
-      let child = (die.firstElementChild || die.firstChild)
-      diceArray.push(child.id)
-    }
-    let scoreArray = [];
-    for (let i = 1; i < (diceArray.length + 1); i++) {
-      if (diceArray[0] === diceArray[i]) {
-        scoreArray.push(diceArray[i])
-      }
-    }
-    if (scoreArray.length === 4 && scoreArray[0] !== '') {
+    let sortedDiceArray = sortDiceArray('none')
+    let uniqueItems = [...new Set(sortedDiceArray)]
+    if (uniqueItems.length === 5 && uniqueItems[0] !== '0') {
       bonusDiv.textContent = '200'
     }
     resetRollNumber()
   } else if (bonusDiv.textContent === '200') {
-    let dice = document.getElementsByClassName('die');
-    let diceArray = [];
-    for (let die of dice) {
-      let child = (die.firstElementChild || die.firstChild)
-      diceArray.push(child.id)
-    }
-    let scoreArray = [];
-    for (let i = 1; i < (diceArray.length + 1); i++) {
-      if (diceArray[0] === diceArray[i]) {
-        scoreArray.push(diceArray[i])
-      }
-    }
-    if (scoreArray.length === 4 && scoreArray[0] !== '') {
+    let sortedDiceArray = sortDiceArray('none')
+    let uniqueItems = [...new Set(sortedDiceArray)]
+    if (uniqueItems.length === 5 && uniqueItems[0] !== '0') {
       bonusDiv.textContent = '300'
     }
     resetRollNumber()
@@ -410,4 +328,28 @@ function reset() {
   upperDiv.textContent = ''
   let rollBtn = document.getElementById('roll-btn')
   rollBtn.disabled = false
+}
+
+function sortDiceArray(number) {
+  if (number === 'none') {
+    let dice = document.getElementsByClassName('die');
+    let diceArray = [];
+    for (let die of dice) {
+      let child = (die.firstElementChild || die.firstChild)
+      diceArray.push(child.id)
+    }
+    let sortedArray = diceArray.sort((a, b) => parseInt(a) - parseInt(b))
+    return sortedArray;
+  } else {
+    let dice = document.getElementsByClassName('die');
+    let diceArray = [];
+    for (let die of dice) {
+      let child = (die.firstElementChild || die.firstChild)
+      if (child.id == number) {
+        diceArray.push(child.id)
+      }
+    }
+    let sortedArray = diceArray.sort((a, b) => parseInt(a) - parseInt(b))
+    return sortedArray;
+  }
 }

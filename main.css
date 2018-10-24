@@ -41,6 +41,11 @@ button {
   border: 1px solid black;
   border-right: none;
   text-align: center;
+  -moz-user-select     : none;
+  -khtml-user-select   : none;
+  -webkit-user-select  : none;
+  -o-user-select       : none;
+  user-select          : none;
 }
 #top-section:nth-child(2) {
   border-top: 2px solid black;
@@ -66,9 +71,10 @@ button {
   padding: 2px;
 }
 #roll-wrap {
-  margin-top: 5px;
+  margin-top: 10px;
   float: right;
   text-align: center;
+  width: 80px;
 }
 #card {
   border: 2px solid black;
