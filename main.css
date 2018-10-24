@@ -67,7 +67,8 @@ button {
 }
 #roll-wrap {
   margin-top: 5px;
-  width: 100%;
+  float: right;
+  text-align: center;
 }
 #card {
   border: 2px solid black;
@@ -83,7 +84,7 @@ button {
 }
 #controls {
   background-color: white;
-  margin: 10px;
+  margin: 5px;
   width: fit-content;
   padding: 5px;
   border: 2px solid black;
@@ -104,6 +105,9 @@ button {
   }
 
 @media only screen and (max-device-width: 480px) {
+  body {
+    margin-top: 2px;
+  }
   #page-wrap {
     flex-direction: column;
   }
