@@ -38,7 +38,7 @@ function lockDie(id) {
       die.style = 'border: 1px solid black;'
       die.className = 'die'
     } else {
-      die.style = 'border: 2px solid rgb(0, 0, 209);'
+      die.style = 'border: 2px solid rgb(255, 0, 0);'
       die.className += ' active'
     }
   }

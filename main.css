@@ -27,7 +27,7 @@ button {
   width: 80px;
 }
 .die.active {
-  border: 2px solid rgb(0, 0, 209);
+  border: 2px solid rgb(255, 0, 0);
 }
 .score-div {
   padding: 5px;
