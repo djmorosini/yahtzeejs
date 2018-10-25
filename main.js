@@ -261,7 +261,7 @@ function scoreYahtzee() {
   if (yahtzee.textContent === '' && rollNumber > 0) {
     let sortedDiceArray = sortDiceArray('none')
     let uniqueItems = [...new Set(sortedDiceArray)]
-    if (uniqueItems.length === 5 && uniqueItems[0] !== '0') {
+    if (uniqueItems.length === 1) {
       yahtzee.textContent = '50'
     } else {
       yahtzee.textContent = '0'
@@ -284,7 +284,7 @@ function scoreBonus() {
   if (bonusDiv.textContent === '' && yahtzee.textContent === '50' && rollNumber > 0) {
     let sortedDiceArray = sortDiceArray('none')
     let uniqueItems = [...new Set(sortedDiceArray)]
-    if (uniqueItems.length === 5 && uniqueItems[0] !== '0') {
+    if (uniqueItems.length === 1) {
       bonusDiv.textContent = '100'
     } else {
       bonusDiv.textContent = '0'
@@ -293,14 +293,14 @@ function scoreBonus() {
   } else if (bonusDiv.textContent === '100') {
     let sortedDiceArray = sortDiceArray('none')
     let uniqueItems = [...new Set(sortedDiceArray)]
-    if (uniqueItems.length === 5 && uniqueItems[0] !== '0') {
+    if (uniqueItems.length === 1) {
       bonusDiv.textContent = '200'
     }
     resetRollNumber()
   } else if (bonusDiv.textContent === '200') {
     let sortedDiceArray = sortDiceArray('none')
     let uniqueItems = [...new Set(sortedDiceArray)]
-    if (uniqueItems.length === 5 && uniqueItems[0] !== '0') {
+    if (uniqueItems.length === 1) {
       bonusDiv.textContent = '300'
     }
     resetRollNumber()
