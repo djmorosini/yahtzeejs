@@ -55,7 +55,7 @@ function resetRollNumber() {
     die.style = 'border: 2px solid black;'
     die.className = 'die'
   }
-  let upperSectionScore = document.getElementsByClassName('top-scores')
+  let upperSectionScore = document.getElementsByClassName('upper-scores')
   let totalTopSection = document.getElementById('upper-section')
   let upperArray = []
   for (let scores of upperSectionScore) {
@@ -86,7 +86,7 @@ function endGame() {
   }
   let totalSum = totalScoresArray.reduce((a, b) => parseInt(a) + parseInt(b), 0);
 
-  let topSection = document.getElementsByClassName('top-scores')
+  let topSection = document.getElementsByClassName('upper-scores')
   let topSectionArray = []
   for (let score of topSection) {
     topSectionArray.push(score.textContent)

@@ -17,56 +17,70 @@
     <div id='card'>
       <h1 id='title'>Yahtzee! Scorecard</h1>
       <div id='top-section'>
-        <div onclick='scoreTop("ones", "1")' class='score-div'>Aces: </div>
-        <span onclick='scoreTop("ones", "1")' id='ones' class='score-span top-scores'></span>
-
-        <div onclick='scoreTop("twos", "2")' class='score-div'>Twos: </div>
-        <span onclick='scoreTop("twos", "2")' id='twos' class='score-span top-scores'></span>
-
-        <div onclick='scoreTop("threes", "3")' class='score-div'>Threes: </div>
-        <span onclick='scoreTop("threes", "3")' id='threes' class='score-span top-scores'></span>
-
-        <div onclick='scoreTop("fours", "4")' class='score-div'>Fours: </div>
-        <span onclick='scoreTop("fours", "4")' id='fours' class='score-span top-scores'></span>
-
-        <div onclick='scoreTop("fives", "5")' class='score-div'>Fives: </div>
-        <span onclick='scoreTop("fives", "5")' id='fives' class='score-span top-scores'></span>
-
-        <div onclick='scoreTop("sixes", "6")' class='score-div'>Sixes: </div>
-        <span onclick='scoreTop("sixes", "6")' id='sixes' class='score-span top-scores'></span>
-
+        <div class='row-wrap' onclick='scoreTop("ones", "1")'>
+          <div class='score-div'>Aces: </div>
+          <span id='ones' class='score-span upper-scores'></span>
+        </div>
+        <div class='row-wrap' onclick='scoreTop("twos", "2")'>
+          <div class='score-div'>Twos: </div>
+          <span id='twos' class='score-span upper-scores'></span>
+        </div>
+        <div class='row-wrap' onclick='scoreTop("threes", "3")'>
+          <div class='score-div'>Threes: </div>
+          <span id='threes' class='score-span upper-scores'></span>
+        </div>
+        <div class='row-wrap' onclick='scoreTop("fours", "4")'>
+          <div class='score-div'>Fours: </div>
+          <span id='fours' class='score-span upper-scores'></span>
+        </div>
+        <div class='row-wrap' onclick='scoreTop("fives", "5")'>
+          <div class='score-div'>Fives: </div>
+          <span id='fives' class='score-span upper-scores'></span>
+        </div>
+        <div class='row-wrap' onclick='scoreTop("sixes", "6")'>
+          <div class='score-div'>Sixes: </div>
+          <span id='sixes' class='score-span upper-scores'></span>
+        </div>
         <div id='top-score' class='totals'>Upper Section Total: <span id='upper-section'></span></div>
       </div>
 
       <div id='bottom-score'>
-        <div onclick='scoreThreeKind()' class='score-div'>3 of a Kind: </div>
-        <span onclick='scoreThreeKind()' id='three-kind' class='score-span'></span>
-
-        <div onclick='scoreFourKind()' class='score-div'>4 of a Kind: </div>
-        <span onclick='scoreFourKind()' id='four-kind' class='score-span'></span>
-
-        <div onclick='scoreFullHouse()' class='score-div'>Full House: </div>
-        <span onclick='scoreFullHouse()' id='full-house' class='score-span'></span>
-
-        <div onclick='scoreSmallStraight()' class='score-div'>Sm Straight: </div>
-        <span onclick='scoreSmallStraight()' id='small-straight' class='score-span'></span>
-
-        <div onclick='scoreLargeStraight()' class='score-div'>Lg Straight: </div>
-        <span onclick='scoreLargeStraight()' id='large-straight' class='score-span'></span>
-
-        <div onclick='scoreYahtzee()' class='score-div'>Yahtzee: </div>
-        <span onclick='scoreYahtzee()' id='yahtzee' class='score-span'></span>
-
-        <div onclick='scoreChance()' class='score-div'>Chance: </div>
-        <span onclick='scoreChance()' id='chance' class='score-span'></span>
-
-        <div onclick='scoreBonus()' class='score-div'>Bonus Yahtzee: </div>
-        <span onclick='scoreBonus()' id='bonus' class='score-span'></span>
-
+        <div class='row-wrap' onclick='scoreThreeKind()'>
+          <div class='score-div'>3 of a Kind: </div>
+          <span id='three-kind' class='score-span'></span>
+        </div>
+        <div class='row-wrap' onclick='scoreFourKind()'>
+          <div class='score-div'>4 of a Kind: </div>
+          <span id='four-kind' class='score-span'></span>
+        </div>
+        <div class='row-wrap' onclick='scoreFullHouse()'>
+          <div class='score-div'>Full House: </div>
+          <span id='full-house' class='score-span'></span>
+        </div>
+        <div class='row-wrap' onclick='scoreSmallStraight()'>
+          <div class='score-div'>Sm Straight: </div>
+          <span id='small-straight' class='score-span'></span>
+        </div>
+        <div class='row-wrap' onclick='scoreLargeStraight()'>
+          <div class='score-div'>Lg Straight: </div>
+          <span id='large-straight' class='score-span'></span>
+        </div>
+        <div class='row-wrap' onclick='scoreYahtzee()'>
+          <div class='score-div'>Yahtzee: </div>
+          <span id='yahtzee' class='score-span'></span>
+        </div>
+        <div class='row-wrap' onclick='scoreChance()'>
+          <div class='score-div'>Chance: </div>
+          <span id='chance' class='score-span'></span>
+        </div>
+        <div class='row-wrap' onclick='scoreBonus()'>
+          <div class='score-div'>Bonus Yahtzee: </div>
+          <span id='bonus' class='score-span'></span>
+        </div>
         <div id='total-sum' class='totals'>Total: <span id='total'></span></div>
       </div>
     </div>
-    
+
     <div id='controls'>
       <div id='dice'>
         <button onclick='lockDie("die1")' id='die1' class='die'></button>

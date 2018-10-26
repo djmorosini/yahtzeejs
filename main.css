@@ -11,8 +11,7 @@ button {
 }
 #top-section {
   display: flex;
-  flex-direction: row;
-  flex-flow: row wrap;
+  flex-direction: column;
 }
 .die {
   padding: 0;
@@ -55,8 +54,7 @@ button {
 }
 #bottom-score {
   display: flex;
-  flex-direction: row;
-  flex-flow: row wrap;
+  flex-direction: column;
   width: fit-content;
 }
 #reset-btn {
@@ -93,6 +91,9 @@ button {
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
 }
 #page-wrap {
+  display: flex;
+}
+.row-wrap {
   display: flex;
 }
 
