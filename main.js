@@ -17,18 +17,28 @@ function rollAll() {
 }
 function updateDice(id, roll) {
   let dieDiv = document.getElementById(id);
-  if (roll == 1) {
-    dieDiv.innerHTML = '<img style="width: 34px; z-index: 2;" id="1" src="images/diefaces (1).png"/>';
-  } else if (roll == 2) {
-    dieDiv.innerHTML = '<img style="width: 34px; z-index: 2;" id="2" src="images/diefaces (2).png"/>';
-  } else if (roll == 3) {
-    dieDiv.innerHTML = '<img style="width: 34px; z-index: 2;" id="3" src="images/diefaces (3).png"/>';
-  } else if (roll == 4) {
-    dieDiv.innerHTML = '<img style="width: 34px; z-index: 2;" id="4" src="images/diefaces (4).png"/>';
-  } else if (roll == 5) {
-    dieDiv.innerHTML = '<img style="width: 34px; z-index: 2;" id="5" src="images/diefaces (5).png"/>';
-  } else if (roll == 6) {
-    dieDiv.innerHTML = '<img style="width: 34px; z-index: 2;" id="6" src="images/diefaces (6).png"/>';
+
+  switch (roll) {
+    case 1:
+      dieDiv.innerHTML = '<img style="width: 34px; z-index: 2;" id="1" src="images/diefaces (1).png"/>';
+      break
+    case 2:
+      dieDiv.innerHTML = '<img style="width: 34px; z-index: 2;" id="2" src="images/diefaces (2).png"/>';
+      break
+    case 3:
+      dieDiv.innerHTML = '<img style="width: 34px; z-index: 2;" id="3" src="images/diefaces (3).png"/>';
+      break
+    case 4:
+      dieDiv.innerHTML = '<img style="width: 34px; z-index: 2;" id="4" src="images/diefaces (4).png"/>';
+      break
+    case 5:
+      dieDiv.innerHTML = '<img style="width: 34px; z-index: 2;" id="5" src="images/diefaces (5).png"/>';
+      break
+    case 6:
+      dieDiv.innerHTML = '<img style="width: 34px; z-index: 2;" id="6" src="images/diefaces (6).png"/>';
+      break
+    default:
+      dieDiv.innerHTML = '';
   }
 }
 function lockDie(id) {
