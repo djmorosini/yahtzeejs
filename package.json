@@ -1,0 +1,22 @@
+{
+  "name": "yahtzeejs",
+  "version": "1.0.0",
+  "description": "[Yahtzee! game](https://djmorosini.github.io/yahtzeejs/)",
+  "main": "main.js",
+  "scripts": {
+    "start": "http-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/djmorosini/yahtzeejs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/djmorosini/yahtzeejs/issues"
+  },
+  "homepage": "https://github.com/djmorosini/yahtzeejs#readme",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
