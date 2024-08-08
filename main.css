@@ -98,6 +98,9 @@ button {
 }
 
 @media (max-width: 630px) {
+    body {
+      touch-action: pan-x pan-y;
+   }
     #page-wrap {
       flex-direction: column;
     }
@@ -109,6 +112,7 @@ button {
 @media only screen and (max-device-width: 480px) {
   body {
     margin-top: 2px;
+    touch-action: pan-x pan-y;
   }
   #page-wrap {
     flex-direction: column;
