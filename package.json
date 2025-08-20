@@ -18,7 +18,10 @@
   "type": "commonjs",
   "main": "main.js",
   "scripts": {
-    "start": "http-server"
+    "start": "http-server",
+    "dev": "webpack serve --mode development",
+    "build": "next build",
+    "test": "jest"
   },
   "dependencies": {
     "ansi-styles": "^4.3.0",
@@ -68,6 +71,9 @@
     "whatwg-encoding": "^2.0.0"
   },
   "devDependencies": {
-    "http-server": "^14.1.1"
+    "http-server": "^14.1.1",
+    "webpack": "^5.101.3",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2"
   }
 }
