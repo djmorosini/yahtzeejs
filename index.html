@@ -14,8 +14,10 @@
 <body>
   <div id='page-wrap'>
     <div id='card'>
-      <h1 id='title'>Yahtzee! Scorecard</h1>
       <div id='top-section'>
+        <div class='row-wrap'>
+          <div id='title' class='totals'>Yahtzee! Scorecard</div>
+        </div>
         <div class='row-wrap' onclick='scoreTop("ones", "1")'>
           <div class='score-div'>Aces: </div>
           <span id='ones' class='score-span upper-scores'></span>
@@ -40,7 +42,12 @@
           <div class='score-div'>Sixes: </div>
           <span id='sixes' class='score-span upper-scores'></span>
         </div>
-        <div id='top-score' class='totals'>Upper Section Total: <span id='upper-section'></span></div>
+        <div class='row-wrap'>
+          <div id='progress' class='totals'>Progress: <span id='results'></span></div>
+        </div>
+        <div class='row-wrap'>
+          <div id='top-score' class='totals'>Upper Section: <span id='upper-section'></span></div>
+        </div>
       </div>
 
       <div id='bottom-score'>
@@ -73,10 +80,12 @@
           <span id='chance' class='score-span'></span>
         </div>
         <div class='row-wrap' onclick='scoreBonus()'>
-          <div class='score-div'>Bonus Yahtzee: </div>
+          <div class='score-div'>Bonus: </div>
           <span id='bonus' class='score-span'></span>
         </div>
-        <div id='total-sum' class='totals'>Total: <span id='total'></span></div>
+        <div class='row-wrap'>
+          <div id='total-sum' class='totals'>Total: <span id='total'></span></div>
+        </div>
       </div>
     </div>
 
@@ -87,10 +96,11 @@
         <button onclick='lockDie("die3")' id='die3' class='die'></button>
         <button onclick='lockDie("die4")' id='die4' class='die'></button>
         <button onclick='lockDie("die5")' id='die5' class='die'></button>
-        <button onclick='rollAll()' id='roll-btn'>Roll Dice</button>
       </div>
-      <div id='roll-wrap'>Roll: <span id='rollSpan'>0</span></div>
-      <button onclick='reset()' id='reset-btn'>New Game</button>
+      <div id='buttons'>
+        <button onclick='rollAll()' id='roll-btn'>Roll: <span id='rollSpan'>0</span></button>
+        <button onclick='reset()' id='reset-btn'>Reset</button>
+      </div>
     </div>
   </div>
 </body>
