@@ -25,6 +25,7 @@ button {
 }
 #roll-btn {
   width: 80px;
+  float:left;
 }
 .die.active {
   border: 2px solid rgb(255, 0, 0);
@@ -51,8 +52,7 @@ button {
   border: 1px solid black;
 }
 #reset-btn {
-  margin-left: 200px;
-  
+  float: right;
 }
 #card {
   border: 2px solid black;
