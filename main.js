@@ -52,13 +52,14 @@ function resetRollNumber() {
       upperArray.push(scores.textContent)
     }
   }
+  let upperSum = upperArray.reduce((a, b) => parseInt(a) + parseInt(b), 0);
   if (upperArray.length === 6 && totalTopSection.textContent === '') {
-    let upperSum = upperArray.reduce((a, b) => parseInt(a) + parseInt(b), 0);
-    totalTopSection.textContent = upperSum
     if (upperSum >= 63) {
-      totalTopSection.textContent += ' + 35 = ' + (upperSum + 35)
+      upperSum = (upperSum + 35)
     }
+    totalTopSection.textContent = upperSum
   }
+  document.getElementById('progress').textContent = 'Bonus+35: ' + upperSum + '/63';
   if (turnNumber === 13) {
     endGame()
   }
