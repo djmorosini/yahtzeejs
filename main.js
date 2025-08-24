@@ -53,13 +53,13 @@ function resetRollNumber() {
     }
   }
   let upperSum = upperArray.reduce((a, b) => parseInt(a) + parseInt(b), 0);
+  document.getElementById('progress').textContent = 'Bonus+35:  ' + upperSum + '/63';
   if (upperArray.length === 6 && totalTopSection.textContent === '') {
     if (upperSum >= 63) {
       upperSum = (upperSum + 35)
     }
     totalTopSection.textContent = upperSum
   }
-  document.getElementById('progress').textContent = 'Bonus+35: ' + upperSum + '/63';
   if (turnNumber === 13) {
     endGame()
   }
