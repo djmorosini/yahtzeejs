@@ -88,6 +88,11 @@ button {
 .controlButtons {
   -webkit-appearance: none;
   border-radius: 0;
+  color: black;
+  border: 1px solid black;
+}
+#buttons {
+  margin-top: 10px;
 }
 
 @media (max-width: 630px) {
